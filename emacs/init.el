@@ -1,5 +1,5 @@
 (require 'package)
-;; enable MELPA package repository, at this stage this is to just download a theme
+;; enable MELPA package repository, this is to just download themes
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
@@ -15,7 +15,38 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (zenburn-theme ##))))
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector
+   (vector "#212121" "#B71C1C" "#558b2f" "#FFA000" "#2196f3" "#4527A0" "#00796b" "#FAFAFA"))
+ '(custom-safe-themes
+   (quote
+    ("7922b14d8971cce37ddb5e487dbc18da5444c47f766178e5a4e72f90437c0711" "78e9a3e1c519656654044aeb25acb8bec02579508c145b6db158d2cfad87c44e" "b1a691bb67bd8bd85b76998caf2386c9a7b2ac98a116534071364ed6489b695d" "89885317e7136d4e86fb842605d47d8329320f0326b62efa236e63ed4be23c58" default)))
+ '(fci-rule-color "#dadada")
+ '(hl-sexp-background-color "#efebe9")
+ '(package-selected-packages (quote (material-theme gruvbox-theme zenburn-theme ##)))
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#B71C1C")
+     (40 . "#FF5722")
+     (60 . "#FFA000")
+     (80 . "#558b2f")
+     (100 . "#00796b")
+     (120 . "#2196f3")
+     (140 . "#4527A0")
+     (160 . "#B71C1C")
+     (180 . "#FF5722")
+     (200 . "#FFA000")
+     (220 . "#558b2f")
+     (240 . "#00796b")
+     (260 . "#2196f3")
+     (280 . "#4527A0")
+     (300 . "#B71C1C")
+     (320 . "#FF5722")
+     (340 . "#FFA000")
+     (360 . "#558b2f"))))
+ '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -50,5 +81,13 @@
 ;;turn electric pair mode on at all times
 (electric-pair-mode 1)
 
-;;THEME - load the zenburn theme, if you don't have this you will need to download the package zenburn-theme from the MELPA repo
-(load-theme 'zenburn t)
+;;THEME - load Theme, if you don't have this you will need to download the package, all themes I use are available from the MELPA repo
+;;(load-theme 'material-light t)
+;;(load-theme 'zenburn t)
+(load-theme 'gruvbox t)
+;;(load-theme 'material t)
+
+;;MENUBAR - disable menu, scroll and toolbar
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(tool-bar-mode -1) 
