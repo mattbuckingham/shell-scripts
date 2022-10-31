@@ -9,9 +9,9 @@ alias mv='mv -i'
 
 #Git aliases
 alias ga='git add'
-alias gc='git commit -m'
+#git commit has been replaced with a function below
+#alias gc='git commit -m'
 alias gp='git push'
-alias gcb="git commit -m 'fixed formatting to satisfy linter'"
 alias gip='git pull'
 alias gs='git status'
 
@@ -30,8 +30,7 @@ alias mkdir='mkdir -pv'
 #make an empty header file with guards
 alias e.h='echo -e "#ifndef _MAIN_H_\n#define _MAIN_H_\n\n#endif /* _MAIN_H_ */" > main.h'
 
-#create an empty readme file
-alias e.r='echo -e "<h1></h1>\n<h2>By $AUTHOR</h2>" > README.md'
+
 
 #list running processes
 alias pp='ps -aux'
@@ -39,7 +38,27 @@ alias pp='ps -aux'
 #kill processes
 alias kk='kill -9 -1'
 
-#todo
-#
-#
-#
+#FUNCTIONS#
+
+#git commit
+gc () {
+git commit -m '$1'
+}
+
+#create an empty c template
+e.c () {
+echo -e "#include <stdio.h>\n#include <stdlib.h>\n\n/**\n *\n *\n *\n*/" > $1
+emacs -nw $1
+}
+
+#create a holberton readme template
+e.hr () {
+echo -e "<h1>$1</h1>\n<h2>By bigBadMatt</h2>\nRepo of projects directly relating to $1, produced for assesment purposes for Holberton School" > README.md
+}
+
+#git add/commit/push for linter
+ga.b () {
+git add $1
+git commit -m 'fixed formatting to satisfy linter'
+git push
+}
