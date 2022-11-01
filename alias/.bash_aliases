@@ -10,7 +10,6 @@ alias mv='mv -i'
 #Git aliases
 alias ga='git add'
 #git commit has been replaced with a function below
-#alias gc='git commit -m'
 alias gp='git push'
 alias gip='git pull'
 alias gs='git status'
@@ -38,7 +37,9 @@ alias pp='ps -aux'
 #kill processes
 alias kk='kill -9 -1'
 
-#FUNCTIONS#
+###############
+###FUNCTIONS###
+###############
 
 #git commit
 gc () {
@@ -57,8 +58,15 @@ echo -e "<h1>$1</h1>\n<h2>By bigBadMatt</h2>\nRepo of projects directly relating
 }
 
 #git add/commit/push for linter
-ga.b () {
+g.b () {
 git add $1
 git commit -m 'fixed formatting to satisfy linter'
+git push
+}
+
+#git add->commit->push in a single line, but dont make a mistake lol
+g.acp () {
+git add $1
+git commit -m "$2"
 git push
 }
