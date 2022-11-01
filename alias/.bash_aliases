@@ -4,7 +4,7 @@
 #make cp,mv and rm default to interactive mode
 alias cp='cp -i'
 alias mv='mv -i'
-#This felt redundant, being asked for confirmation to RM seems dumb
+#This felt redundant, being asked for confirmation to RM seems dumb, left here incase it becomes apparent that this is actually a good idea
 # alias rm='rm -i'
 
 #Git aliases
@@ -17,10 +17,10 @@ alias gs='git status'
 #clear the screen
 alias c='clear'
 
-#see a history of commands
+#see a history of commands, not working on my sandbox atm, don't know why yet
 alias hg='history | grep'
 
-#emacs
+#emac
 alias e='emacs'
 
 #Add -pv flag to mkdir
@@ -28,7 +28,6 @@ alias mkdir='mkdir -pv'
 
 #make an empty header file with guards
 alias e.h='echo -e "#ifndef _MAIN_H_\n#define _MAIN_H_\n\n#endif /* _MAIN_H_ */" > main.h'
-
 
 
 #list running processes
