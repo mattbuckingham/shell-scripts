@@ -40,7 +40,7 @@ alias kk='kill -9 -1'
 ###FUNCTIONS###
 ###############
 
-#git commit
+#git commit - this was meant to remove the need to wrap the commit message in quotes but I don't think it's possible'
 gc () {
 git commit -m '$1'
 }
