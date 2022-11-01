@@ -8,11 +8,11 @@ alias mv='mv -i'
 # alias rm='rm -i'
 
 #Git aliases
-alias ga='git add'
+alias g.a='git add'
 #git commit has been replaced with a function below
-alias gp='git push'
-alias gip='git pull'
-alias gs='git status'
+alias g.p='git push'
+alias g.pl='git pull'
+alias g.s='git status'
 
 #clear the screen
 alias c='clear'
@@ -41,7 +41,7 @@ alias kk='kill -9 -1'
 ###############
 
 #git commit - this was meant to remove the need to wrap the commit message in quotes but I don't think it's possible'
-gc () {
+g.c () {
 git commit -m "$1"
 }
 
