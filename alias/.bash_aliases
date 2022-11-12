@@ -21,7 +21,7 @@ alias c='clear'
 alias hg='history | grep'
 
 #emac
-alias e='emacs'
+alias e='emacs -nw'
 
 #Add -pv flag to mkdir
 alias mkdir='mkdir -pv'
