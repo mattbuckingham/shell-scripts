@@ -20,7 +20,8 @@ alias c='clear'
 #see a history of commands, not working on my sandbox atm, don't know why yet
 alias hg='history | grep'
 
-#emac
+#emacs
+alias emacs='emacs28'
 alias e='emacs -nw'
 
 #Add -pv flag to mkdir
