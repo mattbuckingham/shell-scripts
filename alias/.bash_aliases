@@ -21,7 +21,7 @@ alias c='clear'
 alias hg='history | grep'
 
 #emacs
-alias emacs='emacs28'
+alias emacs='emacs -nw'
 alias e='emacs -nw'
 
 #Add -pv flag to mkdir
