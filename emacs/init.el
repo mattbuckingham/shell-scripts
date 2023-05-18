@@ -1,7 +1,4 @@
 (require 'package)
-;; enable MELPA package repository, this is to just download themes
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -9,11 +6,10 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;;sets the location where any themes are installed
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
-;; only supported in emacs versions 26+
 (global-display-line-numbers-mode 1)
-
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -23,9 +19,10 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
    (vector "#212121" "#B71C1C" "#558b2f" "#FFA000" "#2196f3" "#4527A0" "#00796b" "#FAFAFA"))
+ '(custom-enabled-themes nil)
  '(custom-safe-themes
    (quote
-    ("7922b14d8971cce37ddb5e487dbc18da5444c47f766178e5a4e72f90437c0711" "78e9a3e1c519656654044aeb25acb8bec02579508c145b6db158d2cfad87c44e" "b1a691bb67bd8bd85b76998caf2386c9a7b2ac98a116534071364ed6489b695d" "89885317e7136d4e86fb842605d47d8329320f0326b62efa236e63ed4be23c58" default)))
+    ("72ed8b6bffe0bfa8d097810649fd57d2b598deef47c992920aef8b5d9599eefe" "7922b14d8971cce37ddb5e487dbc18da5444c47f766178e5a4e72f90437c0711" "78e9a3e1c519656654044aeb25acb8bec02579508c145b6db158d2cfad87c44e" "b1a691bb67bd8bd85b76998caf2386c9a7b2ac98a116534071364ed6489b695d" "89885317e7136d4e86fb842605d47d8329320f0326b62efa236e63ed4be23c58" default)))
  '(fci-rule-color "#dadada")
  '(hl-sexp-background-color "#efebe9")
  '(package-selected-packages (quote (material-theme gruvbox-theme zenburn-theme ##)))
@@ -85,13 +82,7 @@
 ;;turn electric pair mode on at all times
 (electric-pair-mode 1)
 
-;;THEME - load Theme, if you don't have this you will need to download the package, all themes I use are available from the MELPA repo
-;;(load-theme 'material-light t)
-;;(load-theme 'zenburn t)
-(load-theme 'gruvbox t)
-;;(load-theme 'material t)
-
 ;;MENUBAR - disable menu, scroll and toolbar
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
-(tool-bar-mode -1) 
+(tool-bar-mode -1)
