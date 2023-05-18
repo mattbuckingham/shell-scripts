@@ -88,7 +88,7 @@
 ;;THEME - load Theme, if you don't have this you will need to download the package, all themes I use are available from the MELPA repo
 ;;(load-theme 'material-light t)
 ;;(load-theme 'zenburn t)
-(load-theme 'gruvbox t)
+;;(load-theme 'gruvbox t)
 ;;(load-theme 'material t)
 
 ;;MENUBAR - disable menu, scroll and toolbar
