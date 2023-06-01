@@ -42,7 +42,7 @@ echo "Updating system packages..."
 run_cmd sudo apt-get update
 run_cmd sudo apt-get upgrade --allow-downgrades -y
 echo "Installing software-properties-common package"
-run_cmd sudo apt-get install software-properties-common -y
+run_cmd sudo apt-get install -y apt-utils software-properties-common
 
 # Install essential apps
 echo "Installing essential apps..."
