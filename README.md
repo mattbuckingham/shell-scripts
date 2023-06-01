@@ -1,6 +1,11 @@
+# Shell Scripts
+
+This is a small collection of scripts that I made to automate some annoying/tedious tasks, I hope you find them handy like I do. 
+
+------------------
 # post-install
 
-This repository contains a Bash installation script that is designed to set up a new Unix-based environment with essential packages and personal configurations. It also ensures that the user's shell is set to Bash, and adds custom aliases to the `.bashrc` file.
+A Bash installation script that is designed to set up a new Unix-based environment with essential packages and personal configurations. It also ensures that the user's shell is set to Bash, downloads custom aliases to the `.bashrc` file and downloads an emacs config file.
 
 ## Features
 
@@ -8,15 +13,15 @@ This repository contains a Bash installation script that is designed to set up a
 - Updates system packages
 - Installs essential applications
 - Adds aliases to .bashrc file
-- Downloads configuration files from GitHub
+- Downloads emacs configuration files from this repo
 
 ## How to Run
 
 To run the script, you need to follow these steps:
 
 1. Clone the repository using git, or download the script directly.
-2. Make the script executable by running the command `chmod +x install.sh`.
-3. Run the script with the command `./install.sh`. 
+2. Make the script executable by running the command `chmod +x post-install`.
+3. Run the script with the command `./post-install`. 
 
 You can also use the `-v` or `--verbose` option for verbose output: `./install.sh -v`.
 
@@ -54,9 +59,17 @@ The script takes the URL of a `.el` file as a parameter. For example, if you wan
 ./set-emacs-theme.sh https://example.com/themes/awesome-theme.el
 ```
 
-## What it Does
+## How to Run
 
-Here's a rundown of what the script does:
+To run the script, you need to follow these steps:
+
+1. Clone the repository using git, or download the script directly.
+2. Make the script executable by running the command `chmod +x set-emacs-theme`.
+3. Run the script with the command `./set-emacs-theme`. 
+
+## Script Details
+
+The script performs the following actions:
 
 1. Checks if a URL is provided.
 2. Extracts the filename from the URL.
@@ -70,30 +83,11 @@ Here's a rundown of what the script does:
 - The script assumes that you're running a Unix-like system with a shell that's compatible with Bash.
 - The script assumes that the `.emacs.d` directory is located in your home directory.
 
-## Installation
-
-1. Clone this repository:
-    ```bash
-    git clone https://github.com/username/set-emacs-theme.git
-    ```
-    **Note:** Replace `username` with your GitHub username.
-
-2. Navigate to the repository directory:
-    ```bash
-    cd set-emacs-theme
-    ```
-
-3. Make the script executable:
-    ```bash
-    chmod +x set-emacs-theme.sh
-    ```
-
 ----------------------------------------------------------------
 # Contributing
 
 Contributions are always welcome. Please submit a pull request if you would like to suggest improvements. 
 
-
 ### ChatGPT
 
-This some of this project, including the majority of the readme was generated and/or rewritten, in part, by chatGPT.
+Some of this project, including the majority of the README was generated and/or rewritten, in part, by chatGPT. 
