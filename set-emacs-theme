@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Check if URL is provided
+if [ -z "$1" ]; then
+    echo "Please provide a URL for the Emacs theme."
+    exit 1
+fi
+
+# Get the file name from the URL
+theme_url=$1
+theme_name=$(basename $theme_url)
+theme_base_name="${theme_name%.*}"
+
+# Change directory to your emacs.d if it exists, or create it if it doesn't
+if [ -d "$HOME/.emacs.d/themes" ]; then
+    cd "$HOME/.emacs.d/themes"
+else
+    mkdir -p "$HOME/.emacs.d/themes"
+    cd "$HOME/.emacs.d/themes"
+fi
+
+# Download the theme
+wget $theme_url
+
+# Append to init.el or .emacs to use the theme, after checking if it exists
+if [ -f "$HOME/.emacs.d/init.el" ]; then
+    echo "(add-to-list 'custom-theme-load-path \"~/.emacs.d/themes\")" >> "$HOME/.emacs.d/init.el"
+    echo "(load-theme '$theme_base_name t)" >> "$HOME/.emacs.d/init.el"
+elif [ -f "$HOME/.emacs" ]; then
+    echo "(add-to-list 'custom-theme-load-path \"~/.emacs.d/themes\")" >> "$HOME/.emacs"
+    echo "(load-theme '$theme_base_name t)" >> "$HOME/.emacs"
+else
+    # If no configuration file exists, create one
+    echo "(add-to-list 'custom-theme-load-path \"~/.emacs.d/themes\")" > "$HOME/.emacs.d/init.el"
+    echo "(load-theme '$theme_base_name t)" >> "$HOME/.emacs.d/init.el"
+fi
