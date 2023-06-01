@@ -1,26 +1,22 @@
 #!/bin/bash
 
-#optional - update to the latest version of emacs - UNTESTED
-#if you choose to go down this path you are on your own, this is based off how I was able to update to emacs 28 on my local machine
-#add progress message for unofficial repo
-#echo "Adding unofficial repo for emacs v28..."
-#sudo apt-get update > /dev/null || { echo "Failed to update packages"; exit 1; }
-#sudo add-apt-repository -y ppa:kelleyk/emacs > /dev/null || { echo "Failed to add unofficial repo"; exit 1; }
+# Change directory to your emacs.d if it exists, or create it if it doesn't
+if [ -d "$HOME/.emacs.d/themes" ]; then
+    cd "$HOME/.emacs.d/themes"
+else
+    mkdir -p "$HOME/.emacs.d/themes"
+    cd "$HOME/.emacs.d/themes"
+fi
 
-#kill any instances of emacs that are running
-#pkill emacs
+# Download the theme
+wget https://raw.githubusercontent.com/greduan/emacs-theme-gruvbox/master/gruvbox-dark-soft-theme.el
 
-#remove any existing emacs installations
-#sudo apt-get remove --autoremove emacs emacs-common > /dev/null
-
-#install latest version of emacs
-#sudo apt-get install emacs28-nox
-
-
-#Themes
-
-#download theme from repo
-
-#add theme to emacs config file
-echo ";;Themes" >> ~/.emacs.d/init.el
-echo "(load-theme 'gruvbox-dark-medium t)" >> ~/.emacs.d/init.el
+# Append to init.el or .emacs to use the theme, after checking if it exists
+if [ -f "$HOME/.emacs.d/init.el" ]; then
+    echo "(add-to-list 'custom-theme-load-path \"~/.emacs.d/themes\")" >> "$HOME/.emacs.d/init.el"
+    echo "(load-theme 'gruvbox-dark-soft t)" >> "$HOME/.emacs.d/init.el"
+else
+    # If no configuration file exists, create one
+    echo "(add-to-list 'custom-theme-load-path \"~/.emacs.d/themes\")" > "$HOME/.emacs.d/init.el"
+    echo "(load-theme 'gruvbox-dark-soft t)" >> "$HOME/.emacs.d/init.el"
+fi
