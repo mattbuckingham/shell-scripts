@@ -5,7 +5,7 @@ This is a small collection of scripts that I made to automate some annoying/tedi
 ------------------
 # post-install
 
-A Bash installation script that is designed to set up a new Unix-based environment with essential packages and personal configurations. It also ensures that the user's shell is set to Bash, downloads custom aliases to the `.bashrc` file and downloads an emacs config file.
+A Bash installation script that is designed to set up a new Ubuntu-based environment with essential packages and personal configurations. It also ensures that the user's shell is set to Bash, downloads custom aliases to the `.bashrc` file and downloads an emacs config file.
 
 ## Features
 
@@ -49,7 +49,7 @@ ________________________________________________________________________________
 
 # set-emacs-theme
 
-`set-emacs-theme` is a bash script that allows you to easily download and apply Emacs themes found on the internet. The script assumes the `.el` file is named after the theme name.
+A bash script that downloads and applies an Emacs theme found on the internet. The script assumes the `.el` file is named after the theme name.
 
 ## Usage
 
