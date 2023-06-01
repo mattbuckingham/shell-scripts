@@ -48,3 +48,4 @@ ________________________________________________________________________________
 theme_script
 The set-emacs-theme script takes the URL of a .el file, downloads it and set's it as the theme for emacs. This script assumes that the file is named the theme name. This makes it very easy to try out themes that can be found anywhere on the internet.
 
+This some of this project, including the majority of the readme was generated and/or rewritten, in part, by chatGPT.
